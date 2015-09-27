@@ -1,0 +1,17 @@
+html, body{
+    height: 100% !important;
+}
+.topbar{
+    height: 20px;
+}
+.secondbar{
+    height: 100px;
+}
+.fullCol{
+}
+::-webkit-input-placeholder {
+    color: #757575;
+}
+.radioClass {
+	color: black;
+}

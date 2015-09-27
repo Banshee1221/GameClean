@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Hello world!</title>
+            <script type="text/javascript" src="js/main.js"></script>
+            <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+            <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        </head>
+        <body class="grey lighten-2">
+            <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+            <script type="text/javascript" src="js/materialize.min.js"></script>
+            <div class="topbar teal darken-2"></div>
+            <div class="secondbar teal valign-wrapper">
+                <h4 class="white-text valign center" style="width:100%">GameClean</h4>
+            </div>
+            <div class="row">
+                <div class="col m4">
+                    <!-- <div class="input-field">
+                        <input value="C:\Program Files (x86)\Steam\SteamApps" id="steam_location" type="text" class="validate">
+                        <label class="active" for="steam_location">Steam Location</label>
+                        </div> -->
+                    <form action="#">
+                        <div class="file-field input-field">
+                            <input id="steamDir" type="file" nwdirectory directory>
+                            <div class="file-path-wrapper">
+                                <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="Steam Directory">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col m8">
+                    <div id="contentsOf" style="margin-top:20px;">
+                        <div>
+                            <form id="checklist" action="#">
+
+                            </form>
+                        </div>
+                    <div>
+                </div>
+            </div>
+
+        </body>
+    </html>
