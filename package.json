@@ -1,8 +1,8 @@
 {
-    "name": "nw-demo",
+    "name": "GameClean",
     "version": "0.0.1",
     "main": "index.html",
     "window": {
-        "toolbar": true 
+        "toolbar": true
     }
 }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html>
         <head>
-            <title>Hello world!</title>
+            <title>GameClean</title>
             <script type="text/javascript" src="js/main.js"></script>
             <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
             <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
@@ -16,15 +16,12 @@
             </div>
             <div class="row">
                 <div class="col m4">
-                    <!-- <div class="input-field">
-                        <input value="C:\Program Files (x86)\Steam\SteamApps" id="steam_location" type="text" class="validate">
-                        <label class="active" for="steam_location">Steam Location</label>
-                        </div> -->
                     <form action="#">
                         <div class="file-field input-field">
+                            <img src="./img/steam_64.png" class="prefix material-icons"/>
                             <input id="steamDir" type="file" nwdirectory directory>
-                            <div class="file-path-wrapper">
-                                <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="Steam Directory">
+                            <div class="prefixshift file-path-wrapper">
+                                <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="SteamApps Directory">
                             </div>
                         </div>
                     </form>

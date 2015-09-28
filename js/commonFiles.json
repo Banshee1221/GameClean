@@ -1,0 +1,9 @@
+{
+	"redistFiles": [
+		{"name": "AMD CPU Setup", "pat": "amdcpusetup.exe"},
+		{"name": "Games For Windows Live Setup", "pat": "gfwlivesetup.exe"},
+		{"name": "Visual C++ Setup", "pat": "vcredist*.exe"},
+		{"name": "Dot Net Framework Setup", "pat": "dotnet*.exe"},
+		{"name": "Dot Net Framework Setup", "pat": "netfx*.exe"}
+	]
+}
