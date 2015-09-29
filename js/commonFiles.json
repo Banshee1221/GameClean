@@ -4,6 +4,13 @@
 		{"name": "Games For Windows Live Setup", "pat": "gfwlivesetup.exe"},
 		{"name": "Visual C++ Setup", "pat": "vcredist*.exe"},
 		{"name": "Dot Net Framework Setup", "pat": "dotnet*.exe"},
-		{"name": "Dot Net Framework Setup", "pat": "netfx*.exe"}
+		{"name": "Dot Net Framework Setup", "pat": "netfx*.exe"},
+		{"name": "XNA Framework", "pat": "xna*.(msi|exe)"},
+		{"name": "OpenAL", "pat": "openal*.exe"},
+		{"name": "DirectX Web Installer", "pat": "dxwebsetup.exe"},
+		{"name": "AMD Propriatery Files", "pat": "amd_*.exe"},
+		{"name": "MS XML Redist", "pat": "msxml*.exe"},
+		{"name": "Dot Net Framework Setup", "pat": "wic_*.exe"},
+		{"name": "Dot Net Framework Setup", "pat": "xpsepsc-*.exe"}
 	]
 }
