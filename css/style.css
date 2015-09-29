@@ -1,5 +1,11 @@
+html {
+    font-family: GillSans, Calibri, Trebuchet, sans-serif;
+}
 html, body{
     height: 100% !important;
+}
+#heighter{
+	min-height: 400px;
 }
 .topbar{
     height: 20px;

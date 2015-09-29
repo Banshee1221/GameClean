@@ -9,12 +9,32 @@ var recursive = require('recursive-readdir');
 var minmat = require('minimatch')
 var fileTypes = require('./js/commonFiles.json')
 var paths = require('path');
+var gui = require('nw.gui');
+var count = 0;
+var directoriesUsed = []
+
+function openExternalBrowser(link) {
+    gui.Shell.openExternal(link);
+}
+
+function dirValidifier(dir){
+    if (directoriesUsed.indexOf(dir) < 0) {
+        directoriesUsed.push(dir);
+    }
+    else {
+        alert("Directory already selected");
+        return -1;
+    }
+}
 
 function getDirContents(number){
     var directory;
     console.log("after dir");
     if (number == 1){
         directory = document.getElementById('steamDir').value;
+        if (dirValidifier(directory) < 0) {
+            return console.error("Not an appropriate directory");
+        }
         var tempArr = directory.split(paths.sep);
         console.log(tempArr);
         lastEle = tempArr[tempArr.length - 1];
@@ -26,6 +46,9 @@ function getDirContents(number){
     }
     else if (number == 2) {
         directory = document.getElementById('gogDir').value;
+        if (dirValidifier(directory) < 0) {
+            return console.error("Not an appropriate directory");
+        }
         var tempArr = directory.split(paths.sep);
         console.log(tempArr);
         lastEle = tempArr[tempArr.length - 1];
@@ -146,31 +169,34 @@ function HTMLwriter(dictionary, index, type) {
         //dictionary[obj].forEach(function(file){
         //    console.log(file);
         //});
-        var count = 0;
-        var tmp = document.createElement("div");
-        tmp.setAttribute("id", obj);
-        tmp.innerHTML = "<h4>"+obj+"</h4>";
-        document.getElementById('checklist').appendChild(tmp);
-        dictionary[obj].forEach(function(file){
-            var tmpLine = file.split(paths.sep);
-            var toWrite;
-            if (type == 1) {
-                toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+2]) + 1, tmpLine.length).join(paths.sep);
-            }
-            else if (type == 2) {
-                toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+1]) + 1, tmpLine.length).join(paths.sep);
-            }
-            var tmpEl = document.createElement("div");
-            console.log(tmpLine);
-            tmpEl.innerHTML = "<p align='right'><input type='checkbox' id='"+count.toString()+"' checked><label class='radioClass' for='"+count.toString()+"'>"+toWrite+" | "+fs.statSync(file)["size"] / 1000000.0+"</label></input></p>";
-            if (type == 1) {
-                document.getElementById(tmpLine[index+2]).appendChild(tmpEl); //console.log(file);
-            }
-            else if (type == 2) {
-                document.getElementById(tmpLine[index+1]).appendChild(tmpEl); //console.log(file);
-            }
-            count++;
-        });
+        if (dictionary[obj].length > 0) {
+            var tmp = document.createElement("div");
+            tmp.setAttribute("id", obj);
+            tmp.innerHTML = "<h5>"+obj+"</h5>";
+            document.getElementById('checklist').appendChild(tmp);
+            dictionary[obj].forEach(function(file){
+                var tmpLine = file.split(paths.sep);
+                var toWrite;
+                if (type == 1) {
+                    toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+2]) + 1, tmpLine.length).join(paths.sep);
+                }
+                else if (type == 2) {
+                    toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+1]) + 1, tmpLine.length).join(paths.sep);
+                }
+                var tmpEl = document.createElement("div");
+                console.log(tmpLine);
+                tmpEl.innerHTML = "<p align='right'><input type='checkbox' id='"+count.toString()
+                +"' checked><label class='radioClass' for='"+count.toString()+"' style='font-size:14px'>"+toWrite
+                +" | "+Math.round((fs.statSync(file)["size"] / 1000000.0) * 100) / 100+"MB</label></input></p>";
+                if (type == 1) {
+                    document.getElementById(tmpLine[index+2]).appendChild(tmpEl); //console.log(file);
+                }
+                else if (type == 2) {
+                    document.getElementById(tmpLine[index+1]).appendChild(tmpEl); //console.log(file);
+                }
+                count++;
+            });
+        }
     }
 }
 
