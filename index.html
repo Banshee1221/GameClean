@@ -6,78 +6,82 @@
             <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
             <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        </head>
-        <body class="grey lighten-2">
             <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
             <script type="text/javascript" src="js/materialize.min.js"></script>
-            <div class="topbar teal darken-2"></div>
-            <div class="secondbar teal valign-wrapper">
-                <h4 class="white-text valign center" style="width:100%">GameClean</h4>
-            </div>
-            <div id="heighter" class="container">
-                <div class="row">
-                    <div class="col m4">
-                        <form action="#">
-                            <div class="file-field input-field">
-                                <img src="./img/steam_64.png" class="prefix material-icons"/>
-                                <input id="steamDir" type="file" nwdirectory directory>
-                                <div class="prefixshift file-path-wrapper">
-                                    <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="SteamApps Directory">
+            <script type="text/javascript" src="js/jq.js"></script>
+        </head>
+        <body class="grey lighten-2">
+            <main>
+                <div class="topbar teal darken-2"></div>
+                <div class="secondbar teal valign-wrapper">
+                    <h4 class="white-text valign center" style="width:100%">GameClean</h4>
+                </div>
+                <div id="heighter" class="container">
+                    <div class="row">
+                        <div class="col m4">
+                            <form action="#">
+                                <div class="file-field input-field">
+                                    <img src="./img/steam_64.png" class="prefix material-icons"/>
+                                    <input id="steamDir" type="file" nwdirectory directory>
+                                    <div class="prefixshift file-path-wrapper">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="SteamApps Directory">
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <form action="#">
-                            <div class="file-field input-field">
-                                <img src="./img/GOG_64.png" class="prefix material-icons"/>
-                                <input id="gogDir" type="file" nwdirectory directory>
-                                <div class="prefixshift file-path-wrapper">
-                                    <input class="file-path validate" type="text" onchange=getDirContents(2) placeholder="GOG Games Directory">
+                            </form>
+                            <form action="#">
+                                <div class="file-field input-field">
+                                    <img src="./img/GOG_64.png" class="prefix material-icons"/>
+                                    <input id="gogDir" type="file" nwdirectory directory>
+                                    <div class="prefixshift file-path-wrapper">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(2) placeholder="GOG Games Directory">
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                        <form action="#">
-                            <div class="file-field input-field">
-                                <img src="./img/origin_64.png" class="prefix material-icons"/>
-                                <input id="originDir" type="file" nwdirectory directory>
-                                <div class="prefixshift file-path-wrapper">
-                                    <input class="file-path validate" type="text" onchange=getDirContents(3) placeholder="Origin Games Directory">
+                            </form>
+                            <form action="#">
+                                <div class="file-field input-field">
+                                    <img src="./img/origin_64.png" class="prefix material-icons"/>
+                                    <input id="originDir" type="file" nwdirectory directory>
+                                    <div class="prefixshift file-path-wrapper">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(3) placeholder="Origin Games Directory">
+                                    </div>
                                 </div>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="col m8">
-                        <div id="contentsOf" style="margin-top:10px;">
-                            <div>
-                                <form id="checklist" action="#">
+                            </form>
+                        </div>
+                        <div class="col m8">
+                            <div id="contentsOf" style="margin-top:10px;">
+                                <div>
+                                    <form id="checklist">
 
-                                </form>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </body>
-        <footer class="page-footer teal">
-            <div class="container">
-                <div class="row">
-                    <div class="col l6 s12">
-                        <h5 class="white-text">Details</h5>
-                    </div>
-                    <div class="col l4 offset-l2 s12">
-                        <h5 class="white-text">Credits</h5>
-                        <ul>
-                        <li style="color: white;">Steam icon: Boneyardbrew @ <a onclick=openExternalBrowser("http://boneyardbrew.deviantart.com/art/Modern-Steam-Icon-421263397") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
-                        <li style="color: white;">GOG Galaxy: Hura134 @ <a onclick=openExternalBrowser("http://hura134.deviantart.com/art/GOG-Galaxy-Icon-531558259") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-copyright teal darken-2">
+            </main>
+            <footer class="page-footer teal">
                 <div class="container">
-                    © 2014 Copyright Text
-                    <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    <div class="row">
+                        <div class="col l6 s12">
+                            <h5 class="white-text">Details</h5>
+                        </div>
+                        <div class="col l4 offset-l2 s12">
+                            <h5 class="white-text">Credits</h5>
+                            <ul>
+                            <li style="color: white;">Steam icon: Boneyardbrew @ <a onclick=openExternalBrowser("http://boneyardbrew.deviantart.com/art/Modern-Steam-Icon-421263397") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
+                            <li style="color: white;">GOG Galaxy: Hura134 @ <a onclick=openExternalBrowser("http://hura134.deviantart.com/art/GOG-Galaxy-Icon-531558259") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </footer>
+                <div class="footer-copyright teal darken-2">
+                    <div class="container">
+                        © 2014 Copyright Text
+                        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                    </div>
+                </div>
+            </footer>
+        </body>
+        
         
     </html>

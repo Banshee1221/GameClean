@@ -170,33 +170,52 @@ function HTMLwriter(dictionary, index, type) {
         //    console.log(file);
         //});
         if (dictionary[obj].length > 0) {
+            var indexVal;
             var tmp = document.createElement("div");
             tmp.setAttribute("id", obj);
             tmp.innerHTML = "<h5>"+obj+"</h5>";
             document.getElementById('checklist').appendChild(tmp);
             dictionary[obj].forEach(function(file){
-                var tmpLine = file.split(paths.sep);
-                var toWrite;
                 if (type == 1) {
-                    toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+2]) + 1, tmpLine.length).join(paths.sep);
+                    indexVal = index + 2;
                 }
                 else if (type == 2) {
-                    toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[index+1]) + 1, tmpLine.length).join(paths.sep);
+                    indexVal = index + 1;
                 }
+                var tmpLine = file.split(paths.sep);
+                var toWrite = tmpLine.slice(tmpLine.indexOf(tmpLine[indexVal]) + 1, tmpLine.length).join(paths.sep);
                 var tmpEl = document.createElement("div");
                 console.log(tmpLine);
-                tmpEl.innerHTML = "<p align='right'><input type='checkbox' id='"+count.toString()
+                tmpEl.innerHTML = "<p align='right'><input name='selectedItems' type='checkbox' class='filled-in' id='"+file
                 +"' checked><label class='radioClass' for='"+count.toString()+"' style='font-size:14px'>"+toWrite
                 +" | "+Math.round((fs.statSync(file)["size"] / 1000000.0) * 100) / 100+"MB</label></input></p>";
-                if (type == 1) {
-                    document.getElementById(tmpLine[index+2]).appendChild(tmpEl); //console.log(file);
-                }
-                else if (type == 2) {
-                    document.getElementById(tmpLine[index+1]).appendChild(tmpEl); //console.log(file);
-                }
+                document.getElementById(tmpLine[indexVal]).appendChild(tmpEl); //console.log(file);
                 count++;
             });
         }
     }
+    var tmpEl = document.createElement("button");
+    tmpEl.setAttribute("type", "submit");
+    tmpEl.setAttribute("value", "submit");
+    tmpEl.setAttribute("class", "btn waves-effect waves-light");
+    tmpEl.setAttribute("id", "subButton");
+    tmpEl.innerHTML = "Submit";
+    document.getElementById('checklist').appendChild(tmpEl);
 }
 
+// Michael Berkowski @ StackOverflow - https://stackoverflow.com/questions/8563240/how-to-get-all-checked-checkboxes
+function checklistSub() {
+    var checkboxes = document.getElementsByName("selectedItems");
+    var checkboxesChecked = [];
+    for (var i=0; i<checkboxes.length; i++) {
+        if (checkboxes[i].checked) {
+            checkboxesChecked.push(checkboxes[i]);
+            console.log(checkboxes[i].getAttribute("id"));
+            //var elem = document.getElementsById(checkboxes[i].getAttribute("id"));
+            //elem.remove();
+            //console.log(elem);
+            //fs.unlinkSync(checkboxes[i].getAttribute("id"));
+        }
+    }
+    console.log(checkboxesChecked.length > 0 ? checkboxesChecked : null);
+}

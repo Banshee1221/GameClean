@@ -1,11 +1,14 @@
 html {
     font-family: GillSans, Calibri, Trebuchet, sans-serif;
 }
-html, body{
-    height: 100% !important;
+body {
+	display: flex;
+	min-height: 100vh;
+	flex-direction: column;
 }
-#heighter{
-	min-height: 400px;
+
+main {
+	flex: 1 0 auto;
 }
 .topbar{
     height: 20px;
@@ -26,4 +29,7 @@ html, body{
 }
 .prefixshift {
 	margin-left: 48px;
+}
+#subButton {
+	margin-top: 20px;
 }
