@@ -17,7 +17,11 @@ npm install recursive-readdir
  
 # Running the Application
 
-If you've gradded a copy of the source code, you cam
+If you've gradded a copy of the source code, you can simply navigate to the directory in terminal or Windows command prompt and execute:
+```shell
+nw .
+```
+Alternatively, you can download one of the binary releases [here](https://github.com/Banshee1221/GameClean/releases) and install that.
 
 # Contact
 
