@@ -1,3 +1,21 @@
+<!--
+    GameClean is a program intended to remove unecessary common
+    redistributables that are packaged with video games.
+    Copyright (C) 2015  Eugene de Beste, debeste.eugene@gmail.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
 <!DOCTYPE html>
     <html>
         <head>
@@ -22,27 +40,35 @@
                             <form action="#">
                                 <div class="file-field input-field">
                                     <img src="./img/steam_64.png" class="prefix material-icons"/>
-                                    <input id="steamDir" type="file" nwdirectory directory>
+                                    <input id="steamDir" type="file" nwdirectory directory />
                                     <div class="prefixshift file-path-wrapper">
-                                        <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="SteamApps Directory">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(1) placeholder="SteamApps Directory" />
                                     </div>
                                 </div>
                             </form>
                             <form action="#">
                                 <div class="file-field input-field">
                                     <img src="./img/GOG_64.png" class="prefix material-icons"/>
-                                    <input id="gogDir" type="file" nwdirectory directory>
+                                    <!--<input id="gogDir" type="file" nwdirectory directory onclick=fail() disabled />
                                     <div class="prefixshift file-path-wrapper">
-                                        <input class="file-path validate" type="text" onchange=getDirContents(2) placeholder="GOG Games Directory">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(2) placeholder="GOG Games Directory" disabled />
+                                    </div>-->
+                                    <input id="gogDir" type="file" />
+                                    <div class="prefixshift file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="GOG Games Directory" disabled />
                                     </div>
                                 </div>
                             </form>
                             <form action="#">
                                 <div class="file-field input-field">
                                     <img src="./img/origin_64.png" class="prefix material-icons"/>
-                                    <input id="originDir" type="file" nwdirectory directory>
+                                    <!--<input id="originDir" type="file" nwdirectory directory onclick=fail() disabled />
                                     <div class="prefixshift file-path-wrapper">
-                                        <input class="file-path validate" type="text" onchange=getDirContents(3) placeholder="Origin Games Directory">
+                                        <input class="file-path validate" type="text" onchange=getDirContents(3) placeholder="Origin Games Directory" disabled />
+                                    </div>-->
+                                    <input id="originDir" type="file" />
+                                    <div class="prefixshift file-path-wrapper">
+                                        <input class="file-path validate" type="text" placeholder="Origin Games Directory" disabled />
                                     </div>
                                 </div>
                             </form>
@@ -64,20 +90,25 @@
                     <div class="row">
                         <div class="col l6 s12">
                             <h5 class="white-text">Details</h5>
+                            <p class="white-text">GameClean is a free and opensource tool developed by Eugene de Beste intended to clear up disk space consumed by the various redistributables that are packages with video games on digital distribution platforms. </p>
                         </div>
                         <div class="col l4 offset-l2 s12">
                             <h5 class="white-text">Credits</h5>
                             <ul>
-                            <li style="color: white;">Steam icon: Boneyardbrew @ <a onclick=openExternalBrowser("http://boneyardbrew.deviantart.com/art/Modern-Steam-Icon-421263397") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
-                            <li style="color: white;">GOG Galaxy: Hura134 @ <a onclick=openExternalBrowser("http://hura134.deviantart.com/art/GOG-Galaxy-Icon-531558259") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
+                            <li class="white-text">Steam icon: Boneyardbrew | <a onclick=openExternalBrowser("http://boneyardbrew.deviantart.com/art/Modern-Steam-Icon-421263397") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
+                            <li class="white-text">GOG Galaxy: Hura134 | <a onclick=openExternalBrowser("http://hura134.deviantart.com/art/GOG-Galaxy-Icon-531558259") class="grey-text text-lighten-3" href="#!">DeviantART</a></li>
+                            <li class="white-text">Materialize CSS Framework | <a onclick=openExternalBrowser("http://materializecss.com/") class="grey-text text-lighten-3" href="#!">&copy; Materialize</a></li>
+                            <li class="white-text">jQuery | <a onclick=openExternalBrowser("https://jquery.com/") class="grey-text text-lighten-3" href="#!">&copy; The jQuery Foundation</a></li>
+                            <li class="white-text">Node.js | <a onclick=openExternalBrowser("https://nodejs.org/en/") class="grey-text text-lighten-3" href="#!">&copy; Node.js Foundation</a></li>
+                            <li class="white-text">NW.JS | <a onclick=openExternalBrowser("https://github.com/nwjs/") class="grey-text text-lighten-3" href="#!">GitHub</a></li>
                             </ul>
                         </div>
                     </div>
                 </div>
                 <div class="footer-copyright teal darken-2">
                     <div class="container">
-                        © 2014 Copyright Text
-                        <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+                        Copyright &copy; 2015  Eugene de Beste, <a onclick=openExternalBrowser("http://www.gnu.org/licenses/") class="grey-text text-lighten-3" href="#!">GNU General Public License</a>
+                        <a class="right" onclick=openExternalBrowser("http://www.github.com/Banshee1221") href="#!"><img style="margin-top:10px;width:32px;" src=img/GitHub-Mark-64px.png /></a>
                     </div>
                 </div>
             </footer>

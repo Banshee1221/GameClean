@@ -8,9 +8,12 @@
 		{"name": "XNA Framework", "pat": "xna*.(msi|exe)"},
 		{"name": "OpenAL", "pat": "openal*.exe"},
 		{"name": "DirectX Web Installer", "pat": "dxwebsetup.exe"},
+		{"name": "DirectX Installer", "pat": "dxsetup.exe"},
 		{"name": "AMD Propriatery Files", "pat": "amd_*.exe"},
 		{"name": "MS XML Redist", "pat": "msxml*.exe"},
 		{"name": "Dot Net Framework Setup", "pat": "wic_*.exe"},
+		{"name": "GameSpy Arcade Setup", "pat": "arcadeinstall*.exe"},
+		{"name": "GameSpy Arcade Setup", "pat": "gamespy*.exe"},
 		{"name": "Dot Net Framework Setup", "pat": "xpsepsc-*.exe"}
 	]
 }
