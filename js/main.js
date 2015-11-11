@@ -269,7 +269,7 @@ function checklistSub() {
         if (checkboxes[i].checked) {
             checkboxesChecked.push(checkboxes[i]);
             console.log(checkboxes[i].getAttribute("id"));
-            //fs.unlinkSync(checkboxes[i].getAttribute("id"));
+            fs.unlinkSync(checkboxes[i].getAttribute("id"));
         }
     }
     console.log(checkboxesChecked.length > 0 ? checkboxesChecked : null);
