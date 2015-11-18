@@ -1,8 +1,67 @@
 {
-    "name": "GameClean",
-    "version": "0.1.0",
-    "main": "index.html",
+    "webexe_settings": {
+        "linux-x32": false, 
+        "export_dir": "output", 
+        "windows-x64": true, 
+        "uncompressed_folder": false, 
+        "download_dir": "C:\\Users\\Bansh\\Downloads", 
+        "nw_compression_level": 0, 
+        "mac-x32": false, 
+        "windows-x32": true, 
+        "mac-x64": false, 
+        "nw_version": "0.12.3", 
+        "force_download": false, 
+        "linux-x64": false
+    }, 
+    "js-flags": "", 
+    "description": "A tool to clean redistributables packaged with digital distribution platforms.", 
+    "single-instance": true, 
+    "nodejs": true, 
+    "chromium-args": "", 
+    "additional_trust_anchors": [], 
+    "user-agent": "", 
+    "inject-js-end": "", 
+    "keywords": [
+        "game", 
+        "steam", 
+        "videogame", 
+        "cleaner", 
+        "utility"
+    ], 
     "window": {
-        "toolbar": true
-    }
+        "fullscreen": false, 
+        "kiosk_emulation": false, 
+        "min_height": 500, 
+        "resizable": true, 
+        "show": true, 
+        "always-on-top": false, 
+        "frame": true, 
+        "title": "GameClean", 
+        "kiosk": false, 
+        "height": 800, 
+        "exe_icon": "", 
+        "visible": true, 
+        "as_desktop": false, 
+        "toolbar": false, 
+        "min_width": 500, 
+        "position": "", 
+        "show_in_taskbar": true, 
+        "mac_icon": "", 
+        "width": 768, 
+        "transparent": false, 
+        "icon": ""
+    }, 
+    "version": "0.1.0", 
+    "snapshot": "", 
+    "node-main": "", 
+    "webkit": {
+        "page-cache": false, 
+        "java": false, 
+        "plugin": false
+    }, 
+    "inject-js-start": "", 
+    "node-remote": "", 
+    "main": "index.html", 
+    "app_name": "GameClean", 
+    "name": "gameclean"
 }

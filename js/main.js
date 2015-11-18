@@ -22,6 +22,11 @@
 *   2 = GoG
 *   3 = Origin
 */
+
+/*=============================================
+=            Modules Load                     =
+=============================================*/
+
 var fs = require("fs");
 var proc = require('process');
 var recursive = require('recursive-readdir');
@@ -29,26 +34,22 @@ var minmat = require('minimatch')
 var fileTypes = require('./js/commonFiles.json')
 var paths = require('path');
 var gui = require('nw.gui');
+
+/*========================================
+=            Global Variables            =
+========================================*/
+
 var count = 0;
 var directoriesUsed = []
 var fileChecks = fileTypes['redistFiles'];
 var collection = {};
 var totalFileSize = 0;
 
-function openExternalBrowser(link) {
-    gui.Shell.openExternal(link);
-}
+/*=============================================
+=            Functions                        =
+=============================================*/
 
-function dirValidifier(dir){
-    if (directoriesUsed.indexOf(dir) < 0) {
-        directoriesUsed.push(dir);
-    }
-    else {
-        alert("Directory already selected");
-        return -1;
-    }
-}
-
+// 
 function getDirContents(number){
     var directory;
     console.log("after dir");
@@ -274,3 +275,21 @@ function checklistSub() {
     }
     console.log(checkboxesChecked.length > 0 ? checkboxesChecked : null);
 }
+
+// Allows NW.js to open links with the system default web-browser
+function openExternalBrowser(link) {
+    gui.Shell.openExternal(link);
+}
+
+// Ensures that the selected directory hasn't been selected priorly
+function dirValidifier(dir){
+    if (directoriesUsed.indexOf(dir) < 0) {
+        directoriesUsed.push(dir);
+    }
+    else {
+        alert("Directory already selected");
+        return -1;
+    }
+}
+
+/*=====  End of Section comment block  ======*/
