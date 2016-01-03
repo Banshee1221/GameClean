@@ -2,8 +2,6 @@
 
 GameClean is a free, opensource and cross-platform NW.js application that is intended to remove redistributables that are packaged with games downloaded through digital distribution platforms. It makes use of the [Materialize framework](http://www.materializecss.com).
 
-If you find the software helpful, please consider making a donation ([PayPal](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=7A2M5ZJWEX678)) so that I can have some more motivation to continue working on it! :)
-
 # Dependenices
 
 In order to run the application from source, you need to have the following installed:
